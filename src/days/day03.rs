@@ -41,11 +41,13 @@ fn find_joltage(joltages: Vec<String>, units: usize) -> i64 {
 }
 
 fn part1() {
+    println!("Day 3, Part 1");
     let content = parse_text();
     println!("joltage: {}", find_joltage(content, 2));
 }
 
 fn part2() {
+    println!("Day 3, Part 2");
     let content = parse_text();
     println!("joltage: {}", find_joltage(content, 12));
 }
