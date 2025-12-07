@@ -1,10 +1,12 @@
 use std::fs;
 
 fn parse_text() -> Vec<String> {
-    let content =
-        fs::read_to_string("inputs/day01.txt").expect("Should have been able to read the file");
-
-    content.trim().split("\n").map(|x| x.to_string()).collect()
+    fs::read_to_string("inputs/day01.txt")
+        .expect("Should have been able to read the file")
+        .trim()
+        .split("\n")
+        .map(|x| x.to_string())
+        .collect()
 }
 
 fn part1() {
