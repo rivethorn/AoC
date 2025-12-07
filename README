@@ -1,0 +1,27 @@
+          |
+         \|/ 
+        --✴--
+         >o<
+        ><¡><
+       >¡<@>O<
+      >>o<O>@<<       ___——-===✴===-——___
+     ><@>o>@<¡><      Advent of Code 2025
+    >>o>>¡>@o<<@<     ———————————————————
+   >¡>>o>O<@>¡>O@<
+  >O>o>>@>O>o<o<<o<
+ >>@>O>¡>@>O><o<@<¡<
+         | |
+  __  ___| |___  __ 
+
+
+This is me trying to increase my problem
+solving skills, using Rust of course.
+
+See the available options with:
+
+cargo run -- -h
+
+Don't forget to include your input files
+in inputs/ directory.
+
+https://adventofcode.com/2025
