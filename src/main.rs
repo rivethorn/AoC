@@ -26,6 +26,7 @@ fn main() {
         9 => day09::run(args.part),
         10 => day10::run(args.part),
         11 => day11::run(args.part),
+        12 => day12::run(args.part),
         other => {
             eprintln!("Day {} is not implemented yet.", other);
             std::process::exit(1);
