@@ -27,14 +27,14 @@ fn parse_text() -> Vec<Vec<usize>> {
 
 fn is_double_seq(s: String) -> bool {
     let half = s.len() / 2;
-    s.len() % 2 == 0 && s[..half] == s[half..]
+    s.len().is_multiple_of(2) && s[..half] == s[half..]
 }
 
 fn is_invalid_id(s: String) -> bool {
     let length = s.len();
 
     for size in 1..=length / 2 {
-        if length % size != 0 {
+        if !length.is_multiple_of(size) {
             continue;
         }
 

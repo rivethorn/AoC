@@ -47,17 +47,16 @@ fn find_accessibles(rolls: Vec<Vec<u32>>) -> (i32, Vec<(i32, i32)>) {
                 let mut all = 0;
 
                 for d in DIRECTIONS {
-                    let row_idx = r_idx as i32 + d.1 as i32;
+                    let row_idx = r_idx as i32 + d.1;
                     let col_idx = c_idx as i32 + d.0;
 
                     if row_idx >= 0
                         && row_idx < rows as i32
                         && col_idx >= 0
                         && col_idx < cols as i32
+                        && rolls[row_idx as usize][col_idx as usize] == 1
                     {
-                        if rolls[row_idx as usize][col_idx as usize] == 1 {
-                            all += 1;
-                        }
+                        all += 1;
                     }
                 }
 
@@ -75,11 +74,11 @@ fn find_accessibles(rolls: Vec<Vec<u32>>) -> (i32, Vec<(i32, i32)>) {
 fn total_removable_rolls(rolls: Vec<Vec<u32>>, rolls_removed: i32) -> i32 {
     let (_, accessibles) = find_accessibles(rolls.clone());
 
-    if accessibles.len() == 0 {
-        return rolls_removed;
+    if accessibles.is_empty() {
+        rolls_removed
     } else {
         let new_rolls = remove_rolls(rolls);
-        return total_removable_rolls(new_rolls, rolls_removed + accessibles.len() as i32);
+        total_removable_rolls(new_rolls, rolls_removed + accessibles.len() as i32)
     }
 }
 

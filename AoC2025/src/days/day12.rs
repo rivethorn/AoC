@@ -37,7 +37,6 @@ fn parse_input() -> Input {
             if label.contains('x') {
                 let dims: Vec<usize> = label.split('x').map(|s| s.parse().unwrap()).collect();
                 let values: Vec<usize> = parts[1]
-                    .trim()
                     .split_whitespace()
                     .map(|s| s.parse().unwrap())
                     .collect();

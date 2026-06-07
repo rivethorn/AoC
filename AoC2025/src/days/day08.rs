@@ -60,10 +60,10 @@ fn part1() {
     let edges = build_sorted_edges(&points);
 
     let limit = edges.len().min(1000);
-    for k in 0..limit {
+    (0..limit).for_each(|k| {
         let (_, i, j) = edges[k];
         let _ = dsu.union(i, j);
-    }
+    });
 
     let mut sizes = vec![0usize; n];
     for i in 0..n {

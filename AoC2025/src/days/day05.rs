@@ -9,7 +9,7 @@ fn parse_text() -> (Vec<(i64, i64)>, Vec<i64>) {
     let mut idx = 0;
 
     for line in &lines {
-        if *line == "" {
+        if line.is_empty() {
             break;
         }
 

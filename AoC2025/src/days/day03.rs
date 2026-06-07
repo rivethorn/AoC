@@ -20,7 +20,7 @@ fn find_joltage(joltages: Vec<String>, units: usize) -> i64 {
 
         let length = numbers.len();
         let mut n = length - units;
-        let mut factor = (10 as i64).pow(units as u32 - 1);
+        let mut factor = 10_i64.pow(units as u32 - 1);
         let mut index = 0;
 
         while n < length {

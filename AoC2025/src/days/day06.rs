@@ -14,8 +14,7 @@ fn parse_input() -> (Vec<Vec<i64>>, Vec<String>) {
         .to_vec()
         .iter()
         .map(|x| {
-            x.trim()
-                .split_whitespace()
+            x.split_whitespace()
                 .map(|x| x.parse::<i64>().unwrap())
                 .collect()
         })
@@ -28,9 +27,9 @@ fn parse_input() -> (Vec<Vec<i64>>, Vec<String>) {
 
     for i in 0..cols {
         let mut group = vec![];
-        for j in 0..rows {
+        (0..rows).for_each(|j| {
             group.push(*initial_operands[j].get(i).unwrap());
-        }
+        });
         operands.push(group);
     }
 
@@ -62,12 +61,12 @@ fn parse_zeroed_input() -> (Vec<Vec<i64>>, Vec<String>) {
 
     for c in 0..cols {
         let mut s = "".to_owned();
-        for i in 0..length - 1 {
+        (0..length - 1).for_each(|i| {
             let to_push = numbers[i].chars().nth(c).unwrap().to_string();
             if !to_push.trim().is_empty() {
                 s = numbers[i].chars().nth(c).unwrap().to_string() + s.as_str();
             }
-        }
+        });
 
         new_numbers.push(s.parse::<i64>().unwrap_or(0));
     }

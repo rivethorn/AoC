@@ -35,7 +35,7 @@ fn rectangles(coords: &[Coord]) -> Vec<(Coord, Coord)> {
         }
     }
 
-    pairs.sort_by(|p1, p2| p1.0.area(&p1.1).cmp(&p2.0.area(&p2.1)));
+    pairs.sort_by_key(|p1| p1.0.area(&p1.1));
     pairs.reverse();
     pairs
 }
@@ -49,7 +49,7 @@ fn edges(point1: &Coord, point2: &Coord) -> (u64, u64, u64, u64) {
     )
 }
 
-fn part1(coords: &Vec<Coord>) {
+fn part1(coords: &[Coord]) {
     println!("Day 9, Part 1");
 
     let mut max_val = u64::MIN;
@@ -63,11 +63,11 @@ fn part1(coords: &Vec<Coord>) {
     println!("The largest area of the rectangle is {}", max_val);
 }
 
-fn part2(coords: &Vec<Coord>) {
+fn part2(coords: &[Coord]) {
     println!("Day 9, Part 2");
 
     let length = coords.len();
-    let rectangles = rectangles(&coords);
+    let rectangles = rectangles(coords);
 
     let (p1, p2) = rectangles
         .iter()
